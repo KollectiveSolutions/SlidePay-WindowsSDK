@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C5F5CECA-37CA-4935-AFA6-3B9180FE9CB2}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SlidePaySilverlightSDK</RootNamespace>
+    <AssemblyName>SlidePaySilverlightSDK</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="Newtonsoft.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Custom\HttpWebRequestExtensions.cs" />
+    <Compile Include="Custom\OperationCanceledException.cs" />
+    <Compile Include="Custom\RequestHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sdk\APIs\ach\sp_ach_balance.cs" />
+    <Compile Include="sdk\APIs\ach\sp_ach_retrieval.cs" />
+    <Compile Include="sdk\APIs\ach\sp_ach_settlement.cs" />
+    <Compile Include="sdk\APIs\bank_account\sp_create_bank_account.cs" />
+    <Compile Include="sdk\APIs\bank_account\sp_delete_bank_account.cs" />
+    <Compile Include="sdk\APIs\bank_account\sp_get_all_bank_accounts.cs" />
+    <Compile Include="sdk\APIs\bank_account\sp_get_bank_account.cs" />
+    <Compile Include="sdk\APIs\endpoint\sp_find_endpoint.cs" />
+    <Compile Include="sdk\APIs\login\sp_login.cs" />
+    <Compile Include="sdk\APIs\login\sp_reset.cs" />
+    <Compile Include="sdk\APIs\payment\sp_get_all_payments.cs" />
+    <Compile Include="sdk\APIs\payment\sp_get_payment.cs" />
+    <Compile Include="sdk\APIs\payment\sp_key_payment.cs" />
+    <Compile Include="sdk\APIs\payment\sp_put_payment.cs" />
+    <Compile Include="sdk\APIs\payment\sp_refund_payment.cs" />
+    <Compile Include="sdk\APIs\payment\sp_stored_payment.cs" />
+    <Compile Include="sdk\APIs\payment\sp_track1_payment.cs" />
+    <Compile Include="sdk\APIs\payment\sp_track2_payment.cs" />
+    <Compile Include="sdk\APIs\report\sp_account_report.cs" />
+    <Compile Include="sdk\APIs\report\sp_payment_report.cs" />
+    <Compile Include="sdk\APIs\stored_payment\sp_create_stored_payment.cs" />
+    <Compile Include="sdk\APIs\stored_payment\sp_delete_stored_payment.cs" />
+    <Compile Include="sdk\APIs\stored_payment\sp_get_all_stored_payments.cs" />
+    <Compile Include="sdk\APIs\stored_payment\sp_get_stored_payment.cs" />
+    <Compile Include="sdk\class_variables.cs" />
+    <Compile Include="sdk\constructor.cs" />
+    <Compile Include="sdk\support\event\exception.cs" />
+    <Compile Include="sdk\support\event\log.cs" />
+    <Compile Include="sdk\support\event\web_exception.cs" />
+    <Compile Include="sdk\support\misc\decimal_tostring.cs" />
+    <Compile Include="sdk\support\misc\get_total_ms.cs" />
+    <Compile Include="sdk\support\misc\log_sdk_init.cs" />
+    <Compile Include="sdk\support\misc\redact.cs" />
+    <Compile Include="sdk\support\misc\string_null_or_empty.cs" />
+    <Compile Include="sdk\support\objects\account.cs" />
+    <Compile Include="sdk\support\objects\account_ledger.cs" />
+    <Compile Include="sdk\support\objects\account_report.cs" />
+    <Compile Include="sdk\support\objects\account_report_detail.cs" />
+    <Compile Include="sdk\support\objects\bank_account.cs" />
+    <Compile Include="sdk\support\objects\boarding_question.cs" />
+    <Compile Include="sdk\support\objects\boarding_questions.cs" />
+    <Compile Include="sdk\support\objects\boarding_request.cs" />
+    <Compile Include="sdk\support\objects\create_account.cs" />
+    <Compile Include="sdk\support\objects\manual_settlement.cs" />
+    <Compile Include="sdk\support\objects\manual_settlement_entry.cs" />
+    <Compile Include="sdk\support\objects\payment.cs" />
+    <Compile Include="sdk\support\objects\payment_report.cs" />
+    <Compile Include="sdk\support\objects\payment_report_detail.cs" />
+    <Compile Include="sdk\support\objects\processor_ach_txn_response.cs" />
+    <Compile Include="sdk\support\objects\processor_cc_txn_response.cs" />
+    <Compile Include="sdk\support\objects\report_request.cs" />
+    <Compile Include="sdk\support\objects\response.cs" />
+    <Compile Include="sdk\support\objects\rest_response.cs" />
+    <Compile Include="sdk\support\objects\retrieval.cs" />
+    <Compile Include="sdk\support\objects\search_filter.cs" />
+    <Compile Include="sdk\support\objects\settlement.cs" />
+    <Compile Include="sdk\support\objects\simple_payment.cs" />
+    <Compile Include="sdk\support\objects\stored_payment.cs" />
+    <Compile Include="sdk\support\objects\token.cs" />
+    <Compile Include="sdk\support\rest\rest_client.cs" />
+    <Compile Include="sdk\support\serdes\deserialize_json.cs" />
+    <Compile Include="sdk\support\serdes\serialize_json.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Newtonsoft.Json.dll" />
+    <Content Include="sdk\support\include\Newtonsoft.Json.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="sdk\APIs\endpoint\bank_account\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

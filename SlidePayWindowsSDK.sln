@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsSDK", "WindowsSDK\WindowsSDK.csproj", "{B1ED1784-7A11-4A35-8A75-208679BF149A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsSDKTest", "WindowsSDKTest\WindowsSDKTest.csproj", "{910829E5-6E86-4E52-9F0A-A937AF9DDAEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidePaySilverlightSDK", "SlidePaySilverlightSDK\SlidePaySilverlightSDK.csproj", "{C5F5CECA-37CA-4935-AFA6-3B9180FE9CB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +23,10 @@ Global
 		{910829E5-6E86-4E52-9F0A-A937AF9DDAEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{910829E5-6E86-4E52-9F0A-A937AF9DDAEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{910829E5-6E86-4E52-9F0A-A937AF9DDAEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F5CECA-37CA-4935-AFA6-3B9180FE9CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F5CECA-37CA-4935-AFA6-3B9180FE9CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F5CECA-37CA-4935-AFA6-3B9180FE9CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F5CECA-37CA-4935-AFA6-3B9180FE9CB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
